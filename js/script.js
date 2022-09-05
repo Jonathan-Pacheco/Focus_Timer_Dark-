@@ -28,6 +28,8 @@ const setVolumeFireplace = document.querySelector('.volume4');
 let timerTimeOut
 let audioAtual 
 
+var runCountdown = false
+
 const cards = Cards({
   forestSong,
   rainSong,
@@ -49,6 +51,9 @@ function play(Audio) {
 }
 
 function countdown() {
+  if (runCountdown) {
+    
+  } else {
   timerTimeOut = setTimeout(function() {
     let seconds = Number(secondsDisplay.textContent)
     let minutes = Number(minutesDisplay.textContent)
@@ -64,6 +69,7 @@ function countdown() {
     secondsDisplay.textContent = String(seconds - 1).padStart(2, "0")
     countdown()
   }, 1000)
+  }
 }
 
 buttonPlus.addEventListener('click', function() {
@@ -85,6 +91,7 @@ buttonPlay.addEventListener('click', function() {
 buttonStop.addEventListener('click', function() {
   click.play()
   clearTimeout(timerTimeOut)
+  runCountdown = false
   cards.audioStop()
 })
 
