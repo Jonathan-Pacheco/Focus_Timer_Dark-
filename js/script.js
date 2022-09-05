@@ -102,6 +102,7 @@ buttonStop.addEventListener('click', function() {
     cards.audioStop()
     play(forestAudio)
     click.play()
+    countdown()
   })
 
   rainSong.addEventListener('click', function() {
@@ -111,6 +112,7 @@ buttonStop.addEventListener('click', function() {
     cards.audioStop()
     play(rainAudio)
     click.play()
+    countdown()
   })
   
   coffeeSong.addEventListener('click', function() {
@@ -120,6 +122,7 @@ buttonStop.addEventListener('click', function() {
     cards.audioStop()
     play(coffeeAudio)
     click.play()
+    countdown()
   })
   
   fireplaceSong.addEventListener('click', function() {
@@ -129,6 +132,7 @@ buttonStop.addEventListener('click', function() {
     cards.audioStop()
     play(fireplaceAudio)
     click.play()
+    countdown()
   })
   
   setVolumeForest.addEventListener("change", function(e) {
