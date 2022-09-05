@@ -48,15 +48,15 @@ function play(Audio) {
      Audio.play()
 }
 
-var runCountdown = false
+var RunCountdown = false
 
 function countdown() {
-  if (runCountdown) {
+  if (RunCountdown) {
   } else {
   timerTimeOut = setInterval(function() {
     let seconds = Number(secondsDisplay.textContent)
     let minutes = Number(minutesDisplay.textContent)
-    runCountdown = true 
+    RunCountdown = true 
     
     if (minutes <= 0 && seconds <= 0) {
       cards.audioStop()
@@ -64,7 +64,6 @@ function countdown() {
     }
     if(seconds <= 0) {
       seconds = 60
-      
       minutesDisplay.textContent = String(minutes - 1).padStart(2, "0")
     }
       secondsDisplay.textContent = String(seconds - 1).padStart(2, "0")
@@ -91,7 +90,7 @@ buttonPlay.addEventListener('click', function() {
 buttonStop.addEventListener('click', function() {
   click.play()
   clearTimeout(timerTimeOut)
-  runCountdown = false
+  RunCountdown = false
   cards.audioStop()
 })
 
