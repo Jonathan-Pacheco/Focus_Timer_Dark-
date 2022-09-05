@@ -28,8 +28,6 @@ const setVolumeFireplace = document.querySelector('.volume4');
 let timerTimeOut
 let audioAtual 
 
-var runCountdown = false
-
 const cards = Cards({
   forestSong,
   rainSong,
@@ -50,11 +48,12 @@ function play(Audio) {
      Audio.play()
 }
 
+var runCountdown = false
+
 function countdown() {
   if (runCountdown) {
-    
   } else {
-  timerTimeOut = setTimeout(function() {
+  timerTimeOut = setInterval(function() {
     let seconds = Number(secondsDisplay.textContent)
     let minutes = Number(minutesDisplay.textContent)
     runCountdown = true 
@@ -65,10 +64,10 @@ function countdown() {
     }
     if(seconds <= 0) {
       seconds = 60
+      
       minutesDisplay.textContent = String(minutes - 1).padStart(2, "0")
     }
-    secondsDisplay.textContent = String(seconds - 1).padStart(2, "0")
-    countdown()
+      secondsDisplay.textContent = String(seconds - 1).padStart(2, "0")
   }, 1000)
   }
 }
