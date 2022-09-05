@@ -182,10 +182,3 @@ darkButton.addEventListener('click', function() {
   darkLightMode()
   darkColors()
 })
-
-
-  
-  
-  
-  
-  
