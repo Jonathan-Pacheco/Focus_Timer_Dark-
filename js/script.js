@@ -57,6 +57,7 @@ function countdown() {
   timerTimeOut = setTimeout(function() {
     let seconds = Number(secondsDisplay.textContent)
     let minutes = Number(minutesDisplay.textContent)
+    runCountdown = true 
     
     if (minutes <= 0 && seconds <= 0) {
       cards.audioStop()
